@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='fr'>
 <head>
   <meta charset='UTF-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel='icon' href='data:,'> <!-- no favicon request -->
   <link rel='stylesheet' href='index.css'>
-  <title>Clean up the web!</title>
+  <title>Nettoyez le Web&nbsp;!</title>
 </head>
 <body>
   <main>
-    <h1>Clean up the web!</h1>
+    <h1>Nettoyez le Web&nbsp;!</h1>
 
-    <p id='introduction'><strong>Developers, it’s time for you to choose a side:</strong> will you help rid the web of privacy-invading tracking or be complicit in it?</p>
+    <p id='introduction'><strong>Développeurs, c'est le moment de choisir votre camp&nbsp;:<br></strong> voulez-vous contribuer à débarrasser le Web du pistage hostile à la confidentialité, ou bien allez-vous en être complices&nbsp;?</p>
 
-    <h2>What can I do?</h2>
+    <h2>Que puis-je faire&nbsp;?</h2>
+    <h3>🚮️ Supprimer les scripts tiers de Google, Facebook, etc.</h3>
+    <p>À commencer par <a href='https://better.fyi/trackers/google-analytics.com/'>Google Analytics</a> (un des pisteurs les plus répandus dans le monde), <a href='https://better.fyi/trackers/youtube.com/'>YouTube videos</a>, <a href='https://better.fyi/trackers/facebook.com/'>Facebook login widgets</a>, etc.</p>
 
-    <h3>🚮️ Remove third-party scripts from Google, Facebook, etc.</h3>
+    <p>Ces scripts permettent à des éleveurs de moutons numériques comme Google et Facebook de pister les utilisatrices d'un site à l'autre sur tout le Web. Si vous les incorporez à votre site, vous êtes complices en permettant ce pistage par des traqueurs.</p>
 
-    <p>This includes <a href='https://better.fyi/trackers/google-analytics.com/'>Google Analytics</a> (one of the most prevalent trackers in the world), <a href='https://better.fyi/trackers/youtube.com/'>YouTube videos</a>, <a href='https://better.fyi/trackers/facebook.com/'>Facebook login widgets</a>, etc.</p>
+    <p>Et oui, ça inclut aussi ces <a href='https://www.theregister.com/2017/05/19/open_source_insider_google_amp_bad_bad_bad/'>saloperies de Google AMP</a>.</p>
 
-    <p>These scripts enable people farmers like Google and Facebook to track people across the web as they go from site to site. If you embed them in your site, you’re complicit in enabling this tracking.</p>
+  <h3>🚮️ Envoyer balader le FLoC de Google</h3>
 
-    <p>And yes, that absolutely includes <a href='https://www.theregister.com/2017/05/19/open_source_insider_google_amp_bad_bad_bad/'>fucking Google AMP</a>.</p>
-
-    <h3>🚮️ Tell Google to FLoC off!</h3>
-
-    <p>Due to mounting pressure, Google announced it will eventually block third-party tracking in its Chrome browser. Sounds good, right? And it is, until you hear that their proposed alternative is <strong>to have Chrome itself track people on every site they visit… unless the sites ask them not to</strong> by including the following header in their responses:</p>
+    <p>Sous la pression grandissante, Google a annoncé qu'ils allaient finalement bloquer les cookies traqueurs tiers avec leur navigateur Chrome. On dirait que c'est une bonne idée, hein&nbsp;? Ça l'était, jusqu'à ce qu'on découvre que l'alternative qu'ils proposent est <strong>d'utiliser Chrome lui-même pour pister les gens sur tous les sites qu'ils visitent… à moins que ces sites ne leur demandent de ne pas le faire</strong> en incluant l'en-tête (header) suivant dans  leurs réponses&nbsp;:</p>
 
     <pre><code>Permissions-Policy: interest-cohort=()</code></pre>
 
-    <p>Now, in case we have to spell out how ass-backwards this is…</p>
+  <p>Bon, maintenant, si vous préférez qu'on vous explique à quel point c'est un coup tordu…</p>
 
-    <p>Every web response in the world shouldn’t have to beg Google, “please, sir, don’t violate the privacy of the person visiting my site” but that’s exactly what Google is forcing us to do with its new Federated Learning of Cohorts (FLoC) initiative.</p>
+    <p>Aucune page web du monde ne devrait pas avoir à supplier Google&nbsp;: «&nbsp;s'il vous plaît, monsieur, ne violez pas la vie privée de la personne qui visite mon site&nbsp;» mais c'est exactement ce que Google nous oblige à faire avec sa nouvelle initiative d'apprentissage fédéré des cohortes (FLoC).</p>
 
-    <p>(If you have trouble remembering the name, just think “flock” as in “a flock of sheep”, because clearly that’s what Google sees us as if they think we’re going to put up with this shit.)</p>
+<p>(si vous avez du mal à retenir le nom, pensez juste que <em>Flock</em> en anglais, c'est «&nbsp;le troupeau&nbsp;», comme un troupeau de moutons, c'est clairement ainsi que Google nous voit quand ils pensent qu'on va adopter leur cochonnerie).</p>
 
     <p><strong>So it’s up to us, developers, to get this header into every web server (e.g., nginx, Caddy, etc.), every web tool (e.g., Wordpress, Wix, etc)… heck, into anything that returns a web response on the planet today.</strong></p>
 
